@@ -1,0 +1,83 @@
+package com.gqt.enttites;
+
+public class Department 
+{
+  private int deptId;
+  private String deptName;
+  private String deptLoc;
+  private Employee [] employees;
+  
+  public Department(int deptId,String deptName,String deptLoc,Employee [] employees)
+  {
+	  this.deptId = deptId;
+	  this.deptName = deptName;
+	  this.deptLoc = deptLoc;
+	  this.employees = employees;
+  }
+  public void disp()
+  {
+	  System.out.println("Department Details");
+	  System.out.println("Dept Id: "+deptId);
+	  System.out.println("Dept Name: "+deptName);
+	  System.out.println("Dept Loc: "+deptLoc);
+	  System.out.println();
+	  System.out.println("Employee Details: ");
+	  for(Employee elem : employees)
+	  {
+	  System.out.println("Emp Id: "+elem.getEmpId());
+	  System.out.println("Emp Name: "+elem.getEmpName());
+	  }
+  }
+}
+
+
+
+
+package com.gqt.enttites;
+
+public class Employee 
+{
+	private int empId;
+	private String empName;
+	
+	public Employee(int empId, String empName) {
+		super();
+		this.empId = empId;
+		this.empName = empName;
+	}
+
+	public int getEmpId() {
+		return empId;
+	}
+
+	public String getEmpName() {
+		return empName;
+	}
+	
+	
+}
+
+
+
+//Main class code
+
+package com.gqt.enttite;
+
+import com.gqt.enttites.*;
+
+public class Launch 
+{
+	public static void main(String[]args)
+	{
+   Employee emp1 = new Employee (18,"Sachin");
+   Employee emp2 = new Employee (19,"Rohit");
+   Employee emp3 = new Employee (20,"Virat");
+   Employee [] e = new Employee [3];
+   e[0] = emp1;
+   e[1] = emp2;
+   e[2] = emp3;
+   Department dept = new Department (12,"BCCI","Dubai",e);
+   dept.disp();
+	}
+   
+}
